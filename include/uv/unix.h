@@ -71,6 +71,8 @@
 # include "uv/posix.h"
 #elif defined(__QNX__)
 # include "uv/posix.h"
+#elif defined(__NuttX__)
+# include "uv/posix.h"
 #endif
 
 #ifndef NI_MAXHOST

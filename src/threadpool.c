@@ -239,7 +239,7 @@ static void reset_once(void) {
 
 
 static void init_once(void) {
-#ifndef _WIN32
+#if !defined(_WIN32) && !defined(__NuttX__)
   /* Re-initialize the threadpool after fork.
    * Note that this discards the global mutex and condition as well
    * as the work queue.
