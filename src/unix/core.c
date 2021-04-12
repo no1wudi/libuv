@@ -58,8 +58,6 @@
 # include <crt_externs.h>
 # include <mach-o/dyld.h> /* _NSGetExecutablePath */
 # define environ (*_NSGetEnviron())
-#else /* defined(__APPLE__) && !TARGET_OS_IPHONE */
-extern char** environ;
 #endif /* !(defined(__APPLE__) && !TARGET_OS_IPHONE) */
 
 
