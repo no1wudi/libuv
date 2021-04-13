@@ -43,3 +43,12 @@ void uv_free_interface_addresses(uv_interface_address_t* addresses, int count) {
 }
 
 int uv_exepath(char* buffer, size_t* size) { return UV_ENOTSUP; }
+
+#ifndef CONFIG_NET_TCP
+void uv__tcp_close(uv_tcp_t* handle) { UNUSED(handle); }
+#endif
+
+#ifndef CONFIG_NET_UDP
+void uv__udp_close(uv_udp_t* handle) { UNUSED(handle); }
+void uv__udp_finish_close(uv_udp_t* handle) { UNUSED(handle); }
+#endif
